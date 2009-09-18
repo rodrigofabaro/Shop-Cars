@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mark: MyString
+  model: MyString
+  year: 1
+  fuel: MyString
+  color: MyString
+  description: MyText
+
+two:
+  mark: MyString
+  model: MyString
+  year: 1
+  fuel: MyString
+  color: MyString
+  description: MyText

@@ -1,0 +1,30 @@
+<h1>Lista dos Carros</h1>
+
+<table>
+  <tr>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Ano</th>
+    <th>Combustivel</th>
+    <th>Cor</th>
+    <th>Descrição</th>
+    <th>Opção</th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%=h car.mark %></td>
+    <td><%=h car.model %></td>
+    <td><%=h car.year %></td>
+    <td><%=h car.fuel %></td>
+    <td><%=h car.color %></td>
+    <td><%=h car.description %></td>
+    <td><%= link_to 'Show', admin_car_path(car) %> |
+        <%= link_to 'Edit', edit_admin_car_path(car) %> |
+        <%= link_to 'Destroy', [:admin, car], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

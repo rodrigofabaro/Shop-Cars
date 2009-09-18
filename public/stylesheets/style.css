@@ -1,0 +1,208 @@
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #1e1f21 url(../images/bg-body.gif) no-repeat left top;
+	color: #6e7073;
+	font: 13px/18px "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+}
+
+a {
+	color: #6e7073;
+	outline: none;
+}
+
+ul, ol {
+	margin-bottom: 5px;
+}
+
+a:link img{border:none;}
+
+
+/*	##################################
+   	BASIC LAYOUT
+	################################## */
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+}
+
+#header {
+	position: relative;
+	height: 200px;
+}
+
+#content {
+	padding: 20px 0 0 0;
+	background: #fff;
+}
+
+#content-left {
+	float: left;
+	width: 600px;
+}
+
+#content-right {
+	float: right;
+	width: 320px;
+}
+
+
+
+
+/*	##################################
+   	HEADINGS
+	################################## */
+
+h1#top {
+	position: absolute;
+	bottom: 80px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+h1#top a {
+	color: #fff;
+	text-decoration: none;
+}
+
+h2#top {
+	margin: 0 0 20px 0;
+}
+
+h2#top {
+	position: absolute;
+	bottom: 60px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#content h2 {
+	margin: 0 0 5px 0;
+
+}
+
+h3 {
+	margin: 0 0 20px 0;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+h3 a {
+	text-decoration: none;
+}
+
+h3 a:hover {
+	text-decoration: underline;
+}
+
+h4 {
+	margin: 0 0 10px 0;
+	font-size: 12px;
+}
+
+
+
+/*	##################################
+   	HEADER
+	################################## */
+
+#top-nav {
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#top-nav li {
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+
+
+/*	##################################
+   	CONTENT
+	################################## */
+
+/** box left */
+
+.box-left {
+	margin: 0 0 40px 20px;
+}
+
+/** box right */
+
+.box-right {
+	margin: 0 20px 20px 0;
+	padding: 20px;
+	background: #f7f7f7 url(../images/bg-box-right.gif) no-repeat left top;
+}
+
+
+/*	##################################
+   	SEARCHFORM
+	################################## */
+
+#searchform #search {
+	float: left;
+	width: 146px;
+	height: 22px;
+	padding: 6px 6px 0 6px;
+	background: #fff url(../images/bg-form-text.gif) repeat-x left top;
+	border: 1px solid #dadada;
+	color: #5e5e5e;
+}
+
+#searchform .button {
+	width: auto;
+	height: 30px;
+	margin: 0px;
+	padding: 0 10px;
+	background: #4a4f54;
+	border: none;
+	color: #fff;
+}
+
+/*	##################################
+   	FOOTER
+	################################## */
+
+#footer {
+	width: 900px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+#footer p {
+	margin: 0 0 10px 0;
+}
+
+#legal {
+	float: left;
+	width: 400px;
+}
+
+.clear {
+	clear:both;
+}
+
+#content table {width:auto;padding: 1em;}
+#content table  tr td {padding: 0.5em; text-align:justify;}
+#content table  th {text-align:center;}
+#content form {width: auto; padding: 2em;}
+#content form {background: #fff url(../images/bg-form-text.gif) repeat-x left top;
+               border: 1px solid #dadada; color: #5e5e5e;}
+#content form .button {width: auto;	height: 30px; margin: 0px; padding: 0 10px;	background: #4a4f54;
+                        border: none; color: #fff;
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Users: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'style', 'nav', 'default' %>
+  <%= javascript_include_tag 'lightbox', 'defaults', 'jquery.popeye', 'jquery.popeye.style', 'jquery.min' %>
+</head>
+<body>
+<div id="page">
+  <div id="header">
+      <h1 id='top' ><%= link_to "Shop Cars", {:controller => "home"}, :class => "active" %></h1>
+    	<h2 id='top' > O carro dos seus sonhos aqui</h2>
+
+    	<ul id="nav">
+    		<li id="first"><%= link_to 'Carros', {:controller => "admin/cars"}, :class => "active" %></li>
+    		<li id="last"><%= link_to 'Usuarios', {:controller => "admin/users"}, :class => "active" %></li>
+    	</ul>
+
+      <ul id="top-nav">
+        <% if current_user %>
+          <li><p>Logado como <%= current_user.login %> | <%= link_to "Sair", admin_logout_path %></p></li>
+          <% else %>
+          <li><p>	Você não está logado | <%= link_to "Login", admin_login_path  %> </p></li>
+        <% end %>
+      </ul>
+      <div class="clear"></div>
+   </div>
+
+   <div id="content">
+    <div class="box-left" style="padding-bottom:10px">
+		  <p style="color: green"><%= flash[:notice] %></p>
+      <%= yield %>
+   </div>
+  </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Users: <%= controller.action_name %></title>
+  <%= javascript_include_tag 'lightbox', 'defaults' %>
+  <%= stylesheet_link_tag 'style', 'nav', 'default', 'jquery.popeye.css', 'jquery.popeye.style.css' %>
+
+
+</head>
+<body>
+  <div id="page">
+    <div id="header">
+    	<h1 id='top'><%= link_to "Shop Cars", {:controller => "home"}, :class => "active" %></h1>
+    	<h2 id='top'> O carro dos seus sonhos aqui</h2>
+
+  		<ul id="nav">
+    		<li id="first"><%= link_to "Home", {:controller => "home"}, :class => "active" %></li>
+    	</ul>
+
+		  <ul id="top-nav">
+				<li><%= link_to 'Admin', admin_login_path %></li>
+			</ul>
+      <div class="clear"></div>
+    </div>
+
+  	<div id="content">
+		  <div id="content-left">
+			  <div class="box-left">
+			  	<div id="ex-wrap">
+            <h1>Carros</h1>
+            <% @cars.each_with_index do |car, index| %>
+            <div>
+              <div id="popeye<%= index+1 %>" class="ppy" style="float:left">
+                <div style="clear:both;float:left">
+                  <div class="ppy-no-js" id="popeye<%= index+1 %>-no-js">
+                    Please stand by, images loading!
+                  </div>
+                  <ul>
+                  <% car.images.each do |image| %>
+                    <li>
+                     <%= link_to (image_tag image.picture.url(:thumb), {:alt => image.description}), image.picture.url(:medium) %>
+                    </li>
+                  <% end %>
+                  </ul>
+                </div>
+              </div>
+              <div class="description" style="float:left;padding:10px">
+              <p><%=h car.model %></p>
+              </div>
+            </div>
+            <br style="clear:both">
+            <% end %>
+          </div>
+          <%= javascript_include_tag 'jquery.min', 'jquery.popeye-1.0.min' %>
+          <script type="text/javascript">
+            <!--//<![CDATA[
+
+            $(document).ready(function () {
+              <% @cars.each_with_index do |car, index| %>
+                $("#popeye<%= index+1 %>").popeye();
+              <% end %>
+            });
+
+            //]]>-->
+          </script>
+          </div>
+
+      </div><!-- end box-left -->
+     <div id="content-right">
+  		<div class="box-right">
+    		<h4>Search</h4>
+    			<div id="searchform">
+    				<form method="get" action="http://pothix.com/blog/">
+    					<input name="s" id="search" type="text">&nbsp;
+    					<input id="search-submit" class="button" name="submit" value="Search" type="submit">
+    				</form>
+    			</div>
+    		</div>
+    </div><!-- end content-right -->
+	  <div class="clear"></div>
+    </div><!-- end content -->
+    <div id="footer">
+    	<div id="legal">
+		    <p>Copyright © 2009 <%= link_to "Shop Cars", {:controller => "home"}, :class => "active" %></p>
+	    </div>
+  	<div class="clear"></div>
+  </div><!-- end footer -->
+</div><!-- end page -->
+</body>
+</html>
+

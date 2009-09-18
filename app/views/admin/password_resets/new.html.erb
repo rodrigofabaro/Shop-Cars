@@ -1,0 +1,15 @@
+
+
+Digite o e-mail para o qual será enviado um novo link de acesso.
+
+<% form_tag admin_password_resets_path do %>
+	<p>
+		Email<br>
+		<%= text_field_tag "email" %>
+	</p>
+	<p>
+		<%= submit_tag "Enviar", :id=>"botao" %> |
+		<%= link_to "Voltar", admin_login_path %>
+	</p>
+<% end %>
+

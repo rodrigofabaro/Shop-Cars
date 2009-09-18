@@ -1,0 +1,28 @@
+<h1>Usuário</h1>
+
+<% form_for([:admin, @user], :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    Login<br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    E-mail<br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    Senha<br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    Confirmar senha<br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Registrar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', admin_users_path %>
+
