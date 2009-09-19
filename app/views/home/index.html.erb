@@ -30,10 +30,9 @@
 		  <div id="content-left">
 			  <div class="box-left">
 			  	<div id="ex-wrap">
-            <h1>Carros</h1>
+			  	  <h1>Carros</h1>
             <% @cars.each_with_index do |car, index| %>
-            <div>
-              <div id="popeye<%= index+1 %>" class="ppy" style="float:left">
+               <div id="popeye<%= index+1 %>" class="ppy" style="float:<%= index.odd? ? "right":"left" %>;">
                 <div style="clear:both;float:left">
                   <div class="ppy-no-js" id="popeye<%= index+1 %>-no-js">
                     Please stand by, images loading!
@@ -48,10 +47,17 @@
                 </div>
               </div>
               <div class="description" style="float:left;padding:10px">
-              <p><%=h car.model %></p>
+              <ul style="list-style:none; ">
+                <li><span class="tipo">Mark:</span><span class="valor"><%=h car.mark %></span></li>
+                <li><span class="tipo">Model:</span><span class="valor"><%=h car.model %></span></li>
+                <li><span class="tipo">Year:</span><span class="valor"><%=h car.year %></span></li>
+                <li><span class="tipo">Fuel:</span><span class="valor"><%=h car.fuel %></span></li>
+                <li><span class="tipo">Color:</span><span class="valor"><%=h car.color %></span></li>
+                <li><span class="tipo">Description:</span><span class="valor"><%=h car.description %></span></li>
+              </ul>
               </div>
-            </div>
-            <br style="clear:both">
+              <br style="clear:both">
+              <br /><br /><br />
             <% end %>
           </div>
           <%= javascript_include_tag 'jquery.min', 'jquery.popeye-1.0.min' %>
@@ -73,7 +79,7 @@
   		<div class="box-right">
     		<h4>Search</h4>
     			<div id="searchform">
-    				<form method="get" action="">
+    				<form style="width:auto;" method="get" action="">
     					<input name="s" id="search" type="text">&nbsp;
     					<input id="search-submit" class="button" name="submit" value="Search" type="submit">
     				</form>

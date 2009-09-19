@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :cars do |image|
       image.resources :images
     end
+
     admin.resources :users
     admin.resource :account, :controller => "users"
     admin.resources :active_users
@@ -18,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
 end
 

@@ -11,11 +11,11 @@ class Admin::CarsController < Admin::ApplicationController
     end
   end
 
-  # GET /admin_cars/1
-  # GET /admin_cars/1.xml
+
   def show
     @car = Car.find(params[:id])
-    @image = Image.find_by_sql(["Select * From images where imageble_type = 'car' and imageble_id = ?", @car[:id]])
+    #@image = @car.images
+    #@image = Image.find_by_sql(["Select * From images where imageble_type = 'car' and imageble_id = ?", @car])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,8 +23,6 @@ class Admin::CarsController < Admin::ApplicationController
     end
   end
 
-  # GET /admin_cars/new
-  # GET /admin_cars/new.xml
   def new
     @car = Car.new
 
@@ -34,13 +32,11 @@ class Admin::CarsController < Admin::ApplicationController
     end
   end
 
-  # GET /admin_cars/1/edit
+
   def edit
     @car = Car.find(params[:id])
   end
 
-  # POST /admin_cars
-  # POST /admin_cars.xml
   def create
     @car = Car.new(params[:car])
 
@@ -56,8 +52,6 @@ class Admin::CarsController < Admin::ApplicationController
     end
   end
 
-  # PUT /admin_cars/1
-  # PUT /admin_cars/1.xml
   def update
     @car = Car.find(params[:id])
 
@@ -73,8 +67,6 @@ class Admin::CarsController < Admin::ApplicationController
     end
   end
 
-  # DELETE /admin_cars/1
-  # DELETE /admin_cars/1.xml
   def destroy
     @car = Car.find(params[:id])
     @car.destroy

@@ -1,23 +1,23 @@
 
-<table style="border:1px solid;">
+<table>
   <tr>
     <th style="border:1px solid" >Ficha</th>
     <th style="border:1px solid">Imagens</th>
   </tr>
 <td style="border:1px solid">
 <ul style="list-style:none; ">
-  <li><b>Mark:</b>  <%=h @car.mark %></span></li>
-  <li><b>Model:</b> <%=h @car.model %></li>
-  <li><b>Year:</b>  <%=h @car.year %></li>
-  <li><b>Fuel:</b>  <%=h @car.fuel %></li>
-  <li><b>Color:</b> <%=h @car.color %></li>
-  <li><b>Description:</b><%=h @car.description %></li>
+  <li><span class="tipo">Mark:</span><span class="valor"><%=h @car.mark %></span></li>
+  <li><span class="tipo">Model:</span><span class="valor"><%=h @car.model %></span></li>
+  <li><span class="tipo">Year:</span><span class="valor"><%=h @car.year %></span></li>
+  <li><span class="tipo">Fuel:</span><span class="valor"><%=h @car.fuel %></span></li>
+  <li><span class="tipo">Color:</span><span class="valor"><%=h @car.color %></span></li>
+  <li><span class="tipo">Description:</span><span class="valor"><%=h @car.description %></span></li>
 </ul>
 </td>
 <td style="border:1px solid">
 <table style="padding:0">
- <% unless @image.empty? %>
- <% @image.each do |img| %>
+ <% unless @car.images.empty? %>
+ <% @car.images.each do |img| %>
           <td style="border:1px solid; text-align:center;">
           <p>
           <%= link_to 'Edit', edit_admin_car_image_path(@car, :id => img.id) %> |
