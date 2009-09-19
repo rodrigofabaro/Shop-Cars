@@ -5,6 +5,8 @@ body {
 	background: #1e1f21 url(../images/bg-body.gif) no-repeat left top;
 	color: #6e7073;
 	font: 13px/18px "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+	line-height: 1.5em;
+	text-align: justify;
 }
 
 a {
@@ -30,22 +32,23 @@ a:link img{border:none;}
 
 #header {
 	position: relative;
-	height: 200px;
+	height: 150px;
 }
 
 #content {
-	padding: 20px 0 0 0;
+	padding: 20px 2px 2px 20px;
 	background: #fff;
+
 }
 
 #content-left {
 	float: left;
-	width: 600px;
+	width: 620px;
 }
 
 #content-right {
 	float: right;
-	width: 320px;
+	width: 280px;
 }
 
 
@@ -144,8 +147,8 @@ h4 {
 /** box right */
 
 .box-right {
-	margin: 0 20px 20px 0;
-	padding: 20px;
+	margin: 0 15px 15px 0;
+	padding: 10px;
 	background: #f7f7f7 url(../images/bg-box-right.gif) no-repeat left top;
 }
 
@@ -157,8 +160,8 @@ h4 {
 #searchform #search {
 	float: left;
 	width: 146px;
-	height: 22px;
-	padding: 6px 6px 0 6px;
+	height: 20px;
+	padding: 3px 3px 0 3px;
 	background: #fff url(../images/bg-form-text.gif) repeat-x left top;
 	border: 1px solid #dadada;
 	color: #5e5e5e;
@@ -166,9 +169,9 @@ h4 {
 
 #searchform .button {
 	width: auto;
-	height: 30px;
+	height: 20px;
 	margin: 0px;
-	padding: 0 10px;
+	padding: 5px 5px;
 	background: #4a4f54;
 	border: none;
 	color: #fff;
@@ -197,12 +200,30 @@ h4 {
 	clear:both;
 }
 
-#content table {width:auto;padding: 1em;}
-#content table  tr td {padding: 0.5em; text-align:justify;}
+#content table {
+    display:block;
+    width:auto;
+    padding: 1em;
+
+}
+#content table tr td {
+                    padding: 0.5em;
+                    text-align:justify;
+
+}
 #content table  th {text-align:center;}
-#content form {width: auto; padding: 2em;}
+#content form {width: 840px; padding: 2em;}
 #content form {background: #fff url(../images/bg-form-text.gif) repeat-x left top;
                border: 1px solid #dadada; color: #5e5e5e;}
-#content form .button {width: auto;	height: 30px; margin: 0px; padding: 0 10px;	background: #4a4f54;
-                        border: none; color: #fff;
+#content form .button {
+    width: auto;
+    height: 30px;
+    margin: 0px;
+    padding: 0 10px;
+    background: #4a4f54;
+    border: none;
+    color: #fff;
+}
+span.tipo {font-weight:bold;padding:0.5em;color:red;}
+span.valor {padding: 0.5em;}
 
