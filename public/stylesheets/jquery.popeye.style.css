@@ -91,7 +91,7 @@
 }
 .ppy-count {
     position:       absolute;
-    padding:        3px 7px 0 5px;
+    padding:        3px 7px 10px 5px;
     bottom:         0px;
     right:          0px;
     font-style:     italic;
