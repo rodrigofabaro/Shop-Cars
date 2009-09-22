@@ -45,10 +45,10 @@ class Admin::PasswordResetsController < Admin::ApplicationController
 	#Envia email (instruções para recuperar a senha)
 	def send_email_password_reset
 		corpo = <<-CODE
-		<b>Instruções para trocar a senha a senha</b><br />
-		<b>Login: </b>#{@user.login}<br />
-		<b>E-mail: </b>#{@user.email}<br />
-		<b>Para trocar a senha <b>Link: </b><a href='#{edit_admin_password_reset_url(@user.perishable_token)}'>clique aqui.</a>
+		Instruções para trocar a senha a senha
+		Login: #{@user.login}
+		E-mail: #{@user.email}
+		Para trocar a senha Link: <a href='#{edit_admin_password_reset_url(@user.perishable_token)}'>clique aqui.</a>
 		CODE
 
 		Email.deliver_padrao(:corpo => corpo, :assunto => "Instruções para trocar a senha", :para => @user.email)

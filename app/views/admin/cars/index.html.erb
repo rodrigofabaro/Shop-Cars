@@ -20,7 +20,7 @@
     <td><%=h car.year %></td>
     <td><%=h car.fuel %></td>
     <td><%=h car.color %></td>
-    <td><%=h car.description %></td>
+    <td class='description'><%=h car.description %></td>
     <td><%= link_to 'Show', admin_car_path(car) %> |
         <%= link_to 'Edit', edit_admin_car_path(car) %> |
         <%= link_to 'Destroy', [:admin, car], :confirm => 'Are you sure?', :method => :delete %></td>

@@ -18,12 +18,10 @@ ul, ol {
 	margin-bottom: 5px;
 }
 
-a:link img{border:none;}
+a:link img{
+    border:none;
+}
 
-
-/*	##################################
-   	BASIC LAYOUT
-	################################## */
 
 #page {
 	width: 940px;
@@ -32,31 +30,30 @@ a:link img{border:none;}
 
 #header {
 	position: relative;
-	height: 150px;
+	height: 180px;
 }
 
-#content {
-	padding: 20px 2px 2px 20px;
-	background: #fff;
+#banner_div {
+     padding: 0 0 300px 300px;
+}
 
+ul.gallery{position:relative;height:295px;width:685px;overflow:hidden;}
+
+#content {
+	padding: 10px;
+	background: #fff;
 }
 
 #content-left {
 	float: left;
 	width: 620px;
+	padding-bottom: 50px;
 }
 
 #content-right {
 	float: right;
 	width: 280px;
 }
-
-
-
-
-/*	##################################
-   	HEADINGS
-	################################## */
 
 h1#top {
 	position: absolute;
@@ -90,7 +87,6 @@ h2#top {
 
 #content h2 {
 	margin: 0 0 5px 0;
-
 }
 
 h3 {
@@ -113,11 +109,6 @@ h4 {
 }
 
 
-
-/*	##################################
-   	HEADER
-	################################## */
-
 #top-nav {
 	position: absolute;
 	top: 10px;
@@ -132,30 +123,22 @@ h4 {
 	margin: 0 0 0 10px;
 }
 
-
-
-/*	##################################
-   	CONTENT
-	################################## */
-
-/** box left */
-
 .box-left {
 	margin: 0 0 40px 20px;
 }
 
-/** box right */
-
-.box-right {
-	margin: 0 15px 15px 0;
-	padding: 10px;
-	background: #f7f7f7 url(../images/bg-box-right.gif) no-repeat left top;
+#indexlist ul {
+    float:left;
+}
+#indexlist li {
+    list-style:none;
 }
 
-
-/*	##################################
-   	SEARCHFORM
-	################################## */
+.box-right {
+	margin: 0 5px 5px 0;
+	padding: 5px;
+	background: #f7f7f7 url(../images/bg-box-right.gif) no-repeat left top;
+}
 
 #searchform #search {
 	float: left;
@@ -176,10 +159,6 @@ h4 {
 	border: none;
 	color: #fff;
 }
-
-/*	##################################
-   	FOOTER
-	################################## */
 
 #footer {
 	width: 900px;
@@ -202,28 +181,70 @@ h4 {
 
 #content table {
     display:block;
-    width:auto;
     padding: 1em;
-
 }
+
 #content table tr td {
-                    padding: 0.5em;
-                    text-align:justify;
+    padding: 0.5em;
+    text-align:justify;
+}
+
+#indexcar table {
+    padding: 5px;
+    width: 325px;
+    text-align:justify;
 
 }
-#content table  th {text-align:center;}
-#content form {width: 840px; padding: 2em;}
-#content form {background: #fff url(../images/bg-form-text.gif) repeat-x left top;
-               border: 1px solid #dadada; color: #5e5e5e;}
+
+
+.tableshow td, tr, th {
+    border: 1px solid #dadada;
+}
+.tableshow ul {
+    list-style:none;
+}
+
+.description {
+    width: 250px;
+}
+
+#content table th {
+    text-align:center;
+}
+
+#content form {
+    padding: 10px;
+}
+
+#content form {
+    background: #fff url(../images/bg-form-text.gif) repeat-x left top;
+    border: 1px solid #dadada;
+    color: #5e5e5e;
+}
+
 #content form .button {
     width: auto;
-    height: 30px;
+    height: 22px;
     margin: 0px;
-    padding: 0 10px;
+    padding: 0 5px;
     background: #4a4f54;
     border: none;
     color: #fff;
 }
-span.tipo {font-weight:bold;padding:0.5em;color:red;}
-span.valor {padding: 0.5em;}
+
+span.tipo {
+    font-weight:bold;
+    padding-right:1.5em;
+    color:red;
+    margin: 0 10px;
+
+}
+
+span.valor {
+    padding: .5em;
+    text-align: left;
+
+}
+
+ul.gallery{position:relative;height:295px;width:685px;overflow:hidden;}
 

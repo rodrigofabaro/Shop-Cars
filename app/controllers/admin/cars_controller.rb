@@ -1,6 +1,6 @@
 class Admin::CarsController < Admin::ApplicationController
 
-  #before_filter :require_user
+  before_filter :require_user
 
   def index
     @cars = Car.all
@@ -14,8 +14,6 @@ class Admin::CarsController < Admin::ApplicationController
 
   def show
     @car = Car.find(params[:id])
-    #@image = @car.images
-    #@image = Image.find_by_sql(["Select * From images where imageble_type = 'car' and imageble_id = ?", @car])
 
     respond_to do |format|
       format.html # show.html.erb

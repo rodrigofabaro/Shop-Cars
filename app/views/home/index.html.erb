@@ -4,24 +4,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Users: <%= controller.action_name %></title>
+  <title>Shop-Cars - O carros dos sonhos aqui</title>
+  <%= stylesheet_link_tag 'reset', 'style', 'nav', 'jquery.popeye', 'jquery.popeye.style' %>
   <%= javascript_include_tag 'lightbox', 'defaults' %>
-  <%= stylesheet_link_tag 'style', 'nav', 'default', 'jquery.popeye.css', 'jquery.popeye.style.css' %>
 
 
 </head>
 <body>
   <div id="page">
     <div id="header">
-    	<h1 id='top'><%= link_to "Shop Cars", {:controller => "home"}, :class => "active" %></h1>
+    	<h1 id='top'><%= link_to "Shop Cars", root_path %></h1>
     	<h2 id='top'> O carro dos seus sonhos aqui</h2>
 
   		<ul id="nav">
-    		<li id="first"><%= link_to "Home", {:controller => "home"}, :class => "active" %></li>
+    		<li id="first"><%= link_to "Home", root_path %></li>
     	</ul>
 
 		  <ul id="top-nav">
-				<li><%= link_to 'Admin', admin_login_path %></li>
+				<li><%= link_to 'Admin', admin_cars_path %></li>
 			</ul>
       <div class="clear"></div>
     </div>
@@ -46,15 +46,33 @@
                   </ul>
                 </div>
               </div>
-              <div class="description" style="float:left;padding:10px">
-              <ul style="list-style:none; ">
-                <li><span class="tipo">Mark:</span><span class="valor"><%=h car.mark %></span></li>
-                <li><span class="tipo">Model:</span><span class="valor"><%=h car.model %></span></li>
-                <li><span class="tipo">Year:</span><span class="valor"><%=h car.year %></span></li>
-                <li><span class="tipo">Fuel:</span><span class="valor"><%=h car.fuel %></span></li>
-                <li><span class="tipo">Color:</span><span class="valor"><%=h car.color %></span></li>
-                <li><span class="tipo">Description:</span><span class="valor"><%=h car.description %></span></li>
-              </ul>
+              <div id="indexcar" style="float:<%= index.odd? ? "right":"left" %>;">
+              <table>
+                <tr>
+                  <th>Mark:</th>
+                  <th><%=h car.mark %></th>
+                </tr>
+                <tr>
+                  <th>Model:</th>
+                  <th><%=h car.model %></th>
+                </tr>
+                <tr>
+                  <th>Year:</th>
+                  <th><%=h car.year %></th>
+                </tr>
+                <tr>
+                  <th>Fuel:</th>
+                  <th><%=h car.fuel %></th>
+                </tr>
+                <tr>
+                  <th>Color:</th>
+                  <th><%=h car.color %></th>
+                </tr>
+                <tr>
+                  <th>Description:</th>
+                  <th><%=h car.description %></th>
+                </tr>
+              </table>
               </div>
               <br style="clear:both">
               <br /><br /><br />
@@ -64,10 +82,11 @@
           <script type="text/javascript">
             <!--//<![CDATA[
 
-            $(document).ready(function () {
-              <% @cars.each_with_index do |car, index| %>
+
+                $(document).ready(function () {
+                <% @cars.each_with_index do |car, index| %>
                 $("#popeye<%= index+1 %>").popeye();
-              <% end %>
+                <% end %>
             });
 
             //]]>-->
@@ -90,7 +109,7 @@
     </div><!-- end content -->
     <div id="footer">
     	<div id="legal">
-		    <p>Copyright © 2009 <%= link_to "Shop Cars", {:controller => "home"}, :class => "active" %></p>
+		    <p>Copyright © 2009 <%= link_to "Shop Cars", root_path %></p>
 	    </div>
   	<div class="clear"></div>
   </div><!-- end footer -->

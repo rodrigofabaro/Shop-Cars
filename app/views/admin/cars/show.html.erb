@@ -1,38 +1,55 @@
-
-<table>
+<table class='tableshow'>
   <tr>
-    <th style="border:1px solid" >Ficha</th>
-    <th style="border:1px solid">Imagens</th>
+    <th>Ficha</th>
+    <th>Imagens</th>
   </tr>
-<td style="border:1px solid">
-<ul style="list-style:none; ">
-  <li><span class="tipo">Mark:</span><span class="valor"><%=h @car.mark %></span></li>
-  <li><span class="tipo">Model:</span><span class="valor"><%=h @car.model %></span></li>
-  <li><span class="tipo">Year:</span><span class="valor"><%=h @car.year %></span></li>
-  <li><span class="tipo">Fuel:</span><span class="valor"><%=h @car.fuel %></span></li>
-  <li><span class="tipo">Color:</span><span class="valor"><%=h @car.color %></span></li>
-  <li><span class="tipo">Description:</span><span class="valor"><%=h @car.description %></span></li>
-</ul>
-</td>
-<td style="border:1px solid">
-<table style="padding:0">
- <% unless @car.images.empty? %>
- <% @car.images.each do |img| %>
-          <td style="border:1px solid; text-align:center;">
+  <td>
+    <ul>
+      <li>
+        <span class="tipo">Mark:</span>
+        <span class="valor"><%=h @car.mark %></span>
+      </li>
+      <li>
+        <span class="tipo">Model:</span>
+        <span class="valor"><%=h @car.model %></span>
+      </li>
+      <li>
+        <span class="tipo">Year:</span>
+        <span class="valor"><%=h @car.year %></span>
+      </li>
+      <li>
+        <span class="tipo">Fuel:</span>
+        <span class="valor"><%=h @car.fuel %></span>
+      </li>
+      <li>
+        <span class="tipo">Color:</span>
+        <span class="valor"><%=h @car.color %></span>
+      </li>
+      <li>
+        <span class="tipo">Description:</span>
+        <span class="valor"><%=h @car.description %></span>
+      </li>
+    </ul>
+  </td>
+  <td>
+  <table>
+    <% unless @car.images.empty? %>
+      <% @car.images.each do |img| %>
+        <td>
           <p>
-          <%= link_to 'Edit', edit_admin_car_image_path(@car, :id => img.id) %> |
-          <%= link_to 'Destroy', admin_car_image_path(@car, :id => img.id), :confirm => 'Are you sure?', :method => :delete %>
+            <%= link_to 'Edit', edit_admin_car_image_path(@car, :id => img.id) %> |
+            <%= link_to 'Destroy', admin_car_image_path(@car, :id => img.id), :confirm => 'Are you sure?', :method => :delete %>
           </p>
           <p>
             <%= image_tag(img.picture(:miniatura)) %>
           </p>
         </td>
     <% end %>
-  <% else %>
-  Este Carro Não possui imagens ainda!!!
-  <% end %>
-</table>
-</td>
+    <% else %>
+     <p>Este Carro Não possui imagens ainda!!!</p>
+    <% end %>
+  </table>
+  </td>
 </table>
 <%= link_to 'Add image', new_admin_car_image_path(@car) %> |
 <%= link_to 'Edit', edit_admin_car_path(@car) %> |

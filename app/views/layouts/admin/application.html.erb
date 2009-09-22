@@ -11,12 +11,12 @@
 <body>
 <div id="page">
   <div id="header">
-      <h1 id='top' ><%= link_to "Shop Cars", root_path, :class => "active" %></h1>
+      <h1 id='top' ><%= link_to "Shop Cars", root_path %></h1>
     	<h2 id='top' > O carro dos seus sonhos aqui</h2>
 
     	<ul id="nav">
-    		<li id="first"><%= link_to 'Carros', admin_cars_path, :class => "active" %></li>
-    		<li id="last"><%= link_to 'Usuarios', admin_users_path, :class => "active" %></li>
+    		<li id="first"><%= link_to 'Carros', admin_cars_path %></li>
+    		<li id="last"><%= link_to 'Usuarios',admin_users_path %></li>
     	</ul>
 
       <ul id="top-nav">
@@ -30,8 +30,7 @@
    </div>
 
    <div id="content">
-    <div class="box-left" style="padding-bottom:10px">
-		  <p style="color: green"><%= flash[:notice] %></p>
+     <p style="color: green"><%= flash[:notice] %></p>
       <%= yield %>
    </div>
   </div>

@@ -1,7 +1,10 @@
 class Admin::UsersController < Admin::ApplicationController
 
-	before_filter :require_no_user, :only => [:new, :create]
-	before_filter :require_user, :only => [:show, :edit, :update]
+	before_filter :require_user, :only => [:new, :create, :index, :show, :edit, :update]
+
+  def index
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
@@ -53,15 +56,28 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
+   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(admin_users_url) }
+      format.xml  { head :ok }
+    end
+  end
+
+
+
+
   private
 
 	def send_email_active_user
 		corpo = <<-CODE
-		<b>Seu cadastro precisa ser confirmado</b><br />
-		<b>Data do cadastro: </b>#{@user.created_at}<br />
-		<b>Login: </b>#{@user.login}<br />
-		<b>E-mail: </b>#{@user.email}<br />
-		<b>Para ativar </b><a href='#{edit_admin_active_user_url(@user.perishable_token)}'>clique aqui.</a>
+		Seu cadastro precisa ser confirmado
+		Data do cadastro: #{@user.created_at}
+		Login: #{@user.login}
+		E-mail: #{@user.email}
+		Para ativar <a href='#{edit_admin_active_user_url(@user.perishable_token)}'>clique aqui.</a>
 		CODE
 
 		Email.deliver_padrao(:corpo => corpo, :assunto => "Cadastro Aceito", :para => @user.email)
